@@ -1,6 +1,8 @@
 FROM alpine:edge
 
-RUN export GRAFANA_VERSION=v2.6.0-beta1 \
+RUN echo "http://mirror.leaseweb.com/alpine/edge/main" > /etc/apk/repositories \
+    && echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+    && export GRAFANA_VERSION=v2.6.0-beta1 \
     && export GOPATH=/go \
     && PATH=$PATH:$GOPATH/bin \
     && apk add --update build-base nodejs go git mercurial \
