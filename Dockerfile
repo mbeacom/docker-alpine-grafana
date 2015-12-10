@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-RUN echo "http://mirror.leaseweb.com/alpine/edge/main" > /etc/apk/repositories \
+RUN echo "http://dl-4.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories \
     && echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
     && export GRAFANA_VERSION=v2.6.0-beta1 \
     && export GOPATH=/go \
