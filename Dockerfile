@@ -20,7 +20,7 @@ RUN export GRAFANA_VERSION=v2.6.0-beta1 \
     && mkdir -p /usr/share/grafana/bin/ \
     && cp -a /go/src/github.com/grafana/grafana/grafana /usr/share/grafana/bin/grafana-server \
     && cp -ra /go/src/github.com/grafana/grafana/public_gen /usr/share/grafana \
-    && cd /usr/share/grafana/grafana && ln -s public_gen public \
+    && mv /go/src/github.com/grafana/grafana/public_gen /usr/share/grafana/public \
     && cp -ra /go/src/github.com/grafana/grafana/conf /usr/share/grafana \
     && go clean -i -r \
     && apk del --purge build-base nodejs go git mercurial \
