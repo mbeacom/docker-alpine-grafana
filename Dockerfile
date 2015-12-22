@@ -25,6 +25,8 @@ RUN export GRAFANA_VERSION=v2.6.0-beta1 \
     && apk del --purge build-base nodejs go git mercurial \
     && rm -rf /go /tmp/* /var/cache/apk/* /root/.n* /usr/local/bin/phantomjs
 
+RUN addgroup -g 40561 stoic && adduser -u 40561 -G stoic -D stoic
+
 EXPOSE 3000
 WORKDIR /usr/share/grafana/
 CMD ["/usr/share/grafana/bin/grafana-server"]
